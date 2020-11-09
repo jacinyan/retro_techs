@@ -25,7 +25,8 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(item_params)
+    # @item = Item.new(item_params)
+    @item = current_user.items.build(item_params)
 
     respond_to do |format|
       if @item.save
@@ -75,12 +76,12 @@ class ItemsController < ApplicationController
 end
 
 
-private 
+# private 
 
-  def check_user
+#   def check_user
   # use the params to find out who the resource belongs to
   # check if the current user matches the owner of the resource
   # if match, allow them to do whatever they want...
   # if not, redirect them somewhere else or flash error message
   # set up before_action hook for necessary actions
-  end
+  # end
