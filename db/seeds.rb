@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+if Item.count == 1
+    20.times do |i|
+        Item.create(
+            name: Faker::Item.name,
+            in_stock: "Yes",
+            price: rand(10..100),
+            description: Faker::Quote.famous_last_words 
+        )
+        puts "created item number #{i + 1 }"
+    end 
+end 

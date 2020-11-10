@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show ] 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -79,9 +78,9 @@ end
 # private 
 
 #   def check_user
-  # use the params to find out who the resource belongs to
-  # check if the current user matches the owner of the resource
-  # if match, allow them to do whatever they want...
-  # if not, redirect them somewhere else or flash error message
-  # set up before_action hook for necessary actions
+    # use the params to find out who the resource belongs to
+    # check if the current user matches the owner of the resource
+    # if match, allow them to do whatever they want...
+    # if not, redirect them somewhere else or flash error message
+    # set up before_action hook for necessary actions
   # end
