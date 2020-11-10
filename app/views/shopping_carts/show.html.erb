@@ -1,4 +1,19 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_shopping_cart_path(@shopping_cart) %> |
-<%= link_to 'Back', shopping_carts_path %>
+<div class="keep-shopping pv1 mt4 has-text-right">
+  <%= link_to 'Keep Shopping', items_path, class: 'button is-warning' %>
+</div>
+<hr />
+<section class="section">
+  <%= render(@shopping_cart.cart_items) %>
+
+  <div class="columns">
+    <div class="column">
+      <%= button_to 'Empty Cart', @shopping_cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
+    </div>
+    <div class="column total has-text-right">
+      <h4 class="title is-4">
+        <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@shopping_cart.sum_total) %>
+      </h4>
+    </div>
+  </div>
+</section>

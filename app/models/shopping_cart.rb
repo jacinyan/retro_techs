@@ -15,4 +15,8 @@ class ShoppingCart < ApplicationRecord
         current_item
     end
 
+    def sum_total
+        cart_items.to_a.sum { |item| item.sum_total }
+      end
+
 end

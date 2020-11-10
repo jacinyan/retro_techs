@@ -3,30 +3,31 @@
 
 	        <div class="container">
 		        <div class='row'>
-					  <% @items.each do |item| %>
 					  <div class='col-md-12 text-center'>
 					  	<h3>adfaf</h3>
 					  	<div class='row'>
+						  <% @items.each do |item| %>
 						  	<div class='col-md-4 text-left'>
 							  	<div class='outer'>
-								  	<a href='single.html'>
 									  	<div class='upper'>
 											<img src='pictures/inner.png'>
 											<div class='innertext'>
-												<span>asdfasdf</span>
-												<h4>adsfsdfaf</h4>
+												<h4><%= item.name %></h4>
+												<span><%= item.in_stock %></span>
 											</div>
 									  	</div>
-									  	<div class='lower'>
-										  	<h3>asdfasfads</h3>
-										  	<span><i class="fas fa-map-marker-alt"></i> asdfsdfsdf</span><br>
-										  	<span><i class="far fa-clock"></i> asdfsdfsdf</span>
+									  	<div class='center'>
+										  	<span><i class="fas fa-map-marker-alt"></i> <%= item.price %></span><br>
+										  	<span><i class="far fa-clock"></i><%= item.id %></span>
 									  	</div>
-								  	</a>
+										<div class='center'>
+											<%= link_to "Learn more", item_path(item), class: "center" %>	
+										</div>
+
 							  	</div>
 						  	</div>
-						  	
-					<%end%> 
+							<%end%> 
+						</div>	
 			    <div>
 	        </div>
 
