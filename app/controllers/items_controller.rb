@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @item = current_user.items.build
   end
 
   # GET /items/1/edit
