@@ -7,12 +7,15 @@ class Ability
     user ||= User.new(role:"guest")
 
       if user.admin?
-         can :manage, Item
-      elsif user.regular?
-        can :manage, Item, user_id: user.id
+         can :manage, :all
+      elsif user.seller?
+         can :manage, Item, user_id: user.id
+      elsif user.buyer?
+         can :read, Item
       end
 
-      can :read, Item
+      can :read, :all
+
       
 
 

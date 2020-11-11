@@ -9,13 +9,21 @@ class User < ApplicationRecord
     role == "admin"
   end
 
-  def regular?
-    role == "regular"
+  def seller?
+    role == "seller"
+  end
+
+  def buyer?
+    role == "buyer"
   end
 
   def guest?
     role == "guest"
   end
+
+  # scope :seller, lambda { where(role: "seller") }
+  # scope :buyer, lambda { where(role: "buyer") }
+
 
 end
 

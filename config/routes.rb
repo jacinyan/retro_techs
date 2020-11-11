@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'items#index'
+  root 'welcome#index'
   devise_for :users
   resources :items
   

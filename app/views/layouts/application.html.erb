@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Retro Techs" %></title>
-     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "About Sharks" %>">
+     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Retro Techs" %>">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,9 +17,13 @@
     <header>
       <%= render 'layouts/header'%>
     </header>
+    <br />
+    <br />
     <main role="main">
     <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
+    <br />
+    <br />
     <header>
        <%= render 'layouts/footer'%>
     </header>
