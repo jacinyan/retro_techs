@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+
+
+  # before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    # @items = Item.all
   end
 
   # GET /items/1
@@ -14,7 +17,7 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = current_user.items.build
+    # @item = Item.new
   end
 
   # GET /items/1/edit
@@ -24,10 +27,13 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    # @item = current_user.items.build(item_params)
+
     # @item = Item.new(item_params)
-    @item = current_user.items.build(item_params)
 
     respond_to do |format|
+      # @item = Item.new(item_params)
+      @item.user_id = current_user.id
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
@@ -65,7 +71,7 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = Item.find(params[:id])
+      # @item = Item.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

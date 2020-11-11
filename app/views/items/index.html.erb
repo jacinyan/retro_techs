@@ -1,10 +1,11 @@
 <% content_for :content do %>
 <% end %>
-
+		<% if can? :create, Item %>
+			<%= link_to("Add New Item", new_item_path, :class => 'action new') %>
+		<% end %>
 	        <div class="container">
 		        <div class='row'>
 					  <div class='col-md-12 text-center'>
-					  	<h3>adfaf</h3>
 					  	<div class='row'>
 						  <% @items.each do |item| %>
 						  	<div class='col-md-4 text-left'>
@@ -12,16 +13,14 @@
 									  	<div class='upper'>
 											<img src='pictures/inner.png'>
 											<div class='innertext'>
-												<h4><%= item.name %></h4>
-												<span><%= item.in_stock %></span>
 											</div>
 									  	</div>
 									  	<div class='center'>
-										  	<span><i class="fas fa-map-marker-alt"></i> <%= item.price %></span><br>
-										  	<span><i class="far fa-clock"></i><%= item.id %></span>
 									  	</div>
 										<div class='center'>
-											<%= link_to "Learn more", item_path(item), class: "center" %>	
+										<% %>
+											<%= link_to "View Item", item_path(item), class: "center" if can? :read, item  %>
+										<%  %>	
 										</div>
 
 							  	</div>

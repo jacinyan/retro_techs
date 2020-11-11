@@ -1,6 +1,5 @@
 class Item < ApplicationRecord
     belongs_to :user
-    has_many :cart_items
 
     validates :name, :presence => true, :length => {:maximum => 50}
     validates :description, :presence => true, :length => {:maximum => 500}
