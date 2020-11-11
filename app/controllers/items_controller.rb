@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   load_and_authorize_resource
-
-
+  
   # before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -28,11 +27,8 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     # @item = current_user.items.build(item_params)
-
     # @item = Item.new(item_params)
-
     respond_to do |format|
-      # @item = Item.new(item_params)
       @item.user_id = current_user.id
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
