@@ -7,17 +7,14 @@ class Ability
     user ||= User.new(role:"guest")
 
       if user.admin?
-         can :manage, :all
+         can :manage, Item
       elsif user.seller?
          can :manage, Item, user_id: user.id
       elsif user.buyer?
          can :read, Item
       end
 
-      can :read, :all
-
-      
-
+      can :read, Item
 
     # Define abilities for the passed in user here. For example:
     #

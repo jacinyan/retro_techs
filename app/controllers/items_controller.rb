@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   load_and_authorize_resource
-  
   # before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -26,8 +25,8 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    # @item = current_user.items.build(item_params)
     # @item = Item.new(item_params)
+    # @item = current_user.items.build(item_params)
     respond_to do |format|
       @item.user_id = current_user.id
       if @item.save
@@ -85,4 +84,4 @@ end
     # if match, allow them to do whatever they want...
     # if not, redirect them somewhere else or flash error message
     # set up before_action hook for necessary actions
-  # end
+# end
