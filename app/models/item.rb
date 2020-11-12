@@ -9,5 +9,5 @@ class Item < ApplicationRecord
     validates_presence_of :in_stock
     validates_numericality_of :price, :greater_than_zero => 0
 
-    validates :user_id, presence: true
+    # validates :user_id, presence: true
 end
