@@ -1,6 +1,4 @@
 class Item < ApplicationRecord
-    belongs_to :user
-
     has_many :order_items
     has_many :orders, through: :order_items
 
@@ -8,6 +6,4 @@ class Item < ApplicationRecord
     validates :description, :presence => true, :length => {:maximum => 500}
     validates_presence_of :in_stock
     validates_numericality_of :price, :greater_than_zero => 0
-
-    # validates :user_id, presence: true
 end
