@@ -8,8 +8,4 @@ class Order < ApplicationRecord
 
   validates :total, presence: true
   validates_numericality_of :total, :greater_than_zero => 0
-
-  # private
-
-  # validates :user_id, presence: true
 end

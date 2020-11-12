@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
         # @order = order.new(order_params)
         # @order = current_user.orders.build(order_params)
         respond_to do |format|
-        @order.user_id = current_user.id
+        # @order.user_id = current_user.id
           if @order.save
             format.html { redirect_to @order, notice: 'order was successfully created.' }
             format.json { render :show, status: :created, location: @order }
