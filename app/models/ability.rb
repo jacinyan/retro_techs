@@ -8,13 +8,19 @@ class Ability
 
       if user.admin?
          can :manage, Item
+         can :manage, Order
       elsif user.seller?
          can :manage, Item, user_id: user.id
+         can :manage, Order, user_id: user.id
       elsif user.buyer?
-         can :read, Item
+        can :manage, Order, user_id: user.id
+        can :read, Item
+      else 
+        cannot :view, Order
       end
 
       can :read, Item
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
