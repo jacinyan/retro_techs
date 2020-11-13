@@ -24,4 +24,7 @@
 
 <%=link_to 'Delete', item_path(@item), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" } if can? :destroy, @item %> ||
 
+
+<%=link_to 'Add to Order', orders_path, method: :post, class: "btn btn-warning" if can? :manage, Order%> ||
+
 <%= link_to 'Back', items_path %>
