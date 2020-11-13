@@ -1,24 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+<%# <div class="container">
+  <div class="card-deck">  %>
 
-<p>
-  <strong>In stock:</strong>
-  <%= @item.in_stock %>
-</p>
+    <%# <div class="card mb-4" style="min-width: 18rem;"> %>
+    <%= image_tag @item.picture, class: 'card-img-top' if @item.picture.attached? %>
+    
+      <tr>
+        <th>Name:</th>
+        <td><%= @item.name %></td>
+      </tr>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
+      <tr>
+        <th>In stock:</th>
+        <td><%= @item.in_stock %></td>
+      </tr>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+      <tr>
+        <th>Price:</th>
+        <td><<%= @item.price %></td>
+      </tr>
+
+      <tr>
+        <th>Description:</th>
+        <td><%= @item.description %></td>
+      </tr>
+      
+  
+
+      <%# </div> %>
+
+  <%# </div> %>
+
+  <%# </div>
+</div> %>
 
   <%=link_to 'Edit', edit_item_path(@item), class: "btn btn-warning" if can? :update, @item%>
 
@@ -28,3 +43,5 @@
 <%=link_to 'Add to Order', orders_path, method: :post, class: "btn btn-warning" if can? :manage, Order%> ||
 
 <%= link_to 'Back', items_path %>
+
+
