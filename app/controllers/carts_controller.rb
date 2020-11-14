@@ -5,7 +5,8 @@ class CartsController < ApplicationController
     end
 
     def empty
-        # empty! method defiend in cart model cart.rb , which is allowable
+        # empty! method defiend in cart model cart.rb , which is feasible
+        current_cart
         current_cart.empty!
         flash[:warning] = "Emptied"
         redirect_to root_path

@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
         if cart.nil?
             cart = Cart.create
         end
-            session[:cart_id] = cart.id
+        session[:cart_id] = cart.id
         return cart
     end
 

@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
     # GET /orders
     # GET /orders.json
     def index
-        @order = current_user.orders.all
+        @orders = current_user.orders.all
     end
 
     def show
@@ -24,6 +24,11 @@ class OrdersController < ApplicationController
         # @order = Order.create(order_params)
         @order = current_user.orders.build(order_params)
         # @order.user_id = current_user.id
+        current_cart.order_items.each do |item|
+          @order.order_items << item
+        end
+        @order.save
+
         respond_to do |format|
           if @order.save
             format.html { redirect_to @order, notice: 'order was successfully created.' }
