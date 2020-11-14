@@ -4,6 +4,24 @@ class ApplicationController < ActionController::Base
     before_action :authenticate_user!, except: [:index, :show]
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    helper_method :current_cart
+
+    def current_cart
+        #store the session in an instance
+        @current_cart ||= find_cart
+    end
+
+    private
+
+    def find_cart
+        cart = Cart.find_by(id: session[:cart_id])
+        if cart.nil?
+            cart = Cart.create
+        end
+            session[:cart_id] = cart.id
+        return cart
+    end
+
     protected
 
         def configure_permitted_parameters

@@ -9,14 +9,17 @@ class Ability
       if user.admin?
          can :manage, Item
          can :manage, Order
+         can :manage, Cart
       elsif user.seller?
          can :manage, Item, user_id: user.id
          can :manage, Order, user_id: user.id
+         can :manage, Cart, user_id: user.id
       elsif user.buyer?
         can :manage, Order, user_id: user.id
+        can :manage, Cart, user_id: user.id
         can :read, Item
       else 
-        cannot :view, Order
+        cannot :view, Cart
       end
 
       can :read, Item

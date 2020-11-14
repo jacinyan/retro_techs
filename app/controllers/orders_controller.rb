@@ -1,21 +1,19 @@
 class OrdersController < ApplicationController
-    load_and_authorize_resource
-    # before_action :set_order, only: [:show, :edit, :update, :destroy]
+    # load_and_authorize_resource
+    before_action :set_order, only: [:show, :edit, :update, :destroy]
 
     # GET /orders
     # GET /orders.json
     def index
-        # current_user.orders
+        @order = current_user.orders.all
     end
 
     def show
-        # @order = current_user.orders.find(params[:id])
-        # @order.user_id = current_user.id
     end
 
     # GET /orders/new
     def new
-        # @order = current_user.orders.build
+      @order = current_user.orders.build
     end
 
     # GET /orders/1/edit
@@ -24,7 +22,7 @@ class OrdersController < ApplicationController
 
     def create
         # @order = Order.create(order_params)
-        # @order = current_user.orders.build(order_params)
+        @order = current_user.orders.build(order_params)
         # @order.user_id = current_user.id
         respond_to do |format|
           if @order.save
@@ -64,12 +62,12 @@ class OrdersController < ApplicationController
       private
         # Use callbacks to share common setup or constraints between actions.
         def set_order
-        #   @order = current_user.orders.find(params[:id])
+          @order = current_user.orders.find(params[:id])
         end
     
         # Only allow a list of trusted parameters through.
         def order_params
-          params.require(:order).permit(:user_id, {:item_ids => []})
+          params.require(:order).permit(:user_id, :name, :address)
         end
     
 end

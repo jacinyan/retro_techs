@@ -15,7 +15,7 @@
 				</li>
 				<%  %>
 				<li class="nav-item">
-				<%= link_to "Orders", orders_path, class: 'nav-link' if can? :view, Order %>
+				<%= link_to "Order", orders_path, class: 'nav-link' if can? :view, Order %>
 				</li>
 				<% if user_signed_in? %>
 				<li class="nav-item">
