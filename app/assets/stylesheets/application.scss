@@ -14,12 +14,12 @@ nav li{
 	    margin: 0 13px;
 }
 #intro .jumbotron{
-	background: url('../pictures/mainbg.png');
+	background: asset-url('hero.jpeg');
 	background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
     height: 70vh;
-    margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 #intro .jumbotron .container{
