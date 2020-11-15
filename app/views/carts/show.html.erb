@@ -1,9 +1,10 @@
 <h2>Cart show</h2>
+
 <ul>
   <% current_cart.order_items.each do |order_item| %>
     <li>Item: <%= order_item.item.name %></li>
     <li>Price: <%= number_to_currency(order_item.item.price) %></li>
-     Quantity: <%= order_item.quantity %>
+    <li>Quantity: <%= order_item.quantity %></li>
 
     <ul>
       <li>
@@ -16,6 +17,6 @@
 
 Sum total: <%= render_cart_total(current_cart) %> 
 
-<%= link_to "Proceed to checkout", new_order_path %><br>
+<%= link_to "Checkout？", new_order_path %><br>
 
-<%= link_to "Empty cart", cart_path(current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to "Empty cart", cart_path(current_cart), method: :delete, data: {confirm: "Are you sure?"} %>

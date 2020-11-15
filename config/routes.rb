@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :orders
 
   get 'carts/:id', to: 'carts#show', as: 'cart'
-  # delete 'carts/:id', to: 'carts#destroy'
   delete 'carts/:id', to: 'carts#empty'
 
   post 'order_items', to: 'order_items#create'

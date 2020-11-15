@@ -25,11 +25,12 @@ class OrdersController < ApplicationController
         @order = current_user.orders.build(order_params)
         # @order.user_id = current_user.id
         current_cart.order_items.each do |checkout_item|
-          @order.order_items << 
+          checkout_item.order_id = @order.id
+          @order.order_items << checkout_item
           checkout_item.cart_id = nil
         end
-        @order.save
 
+        @order.save
         respond_to do |format|
           if @order.save
             format.html { redirect_to @order, notice: 'order was successfully created.' }
