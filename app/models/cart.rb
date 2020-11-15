@@ -1,15 +1,17 @@
 class Cart < ApplicationRecord
     has_many :order_items, dependent: :destroy
-    has_many :items, through: :order_items
+    has_many :items, through: :order_items, source: :item
 
     def empty!
-        order_items.destroy_all
+        current_cart.order_items.destroy_all
     end
 
-    def sub_total
+    def total
         sum = 0
-        self.order_items.each do |order_item|
-          sum+= order_item.total_price
+        current_cart.order_items.each do |order_item|
+            if order_item.item.price.present? && order_item.quantity.present?
+                sum += order_item.item.price * order_item.quantity
+            end
         end
         return sum
     end

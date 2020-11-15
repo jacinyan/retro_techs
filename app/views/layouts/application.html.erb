@@ -17,16 +17,15 @@
     <header>
       <%= render 'layouts/header'%>
     </header>
-    <br />
-    <br />
+  
     <main role="main">
-    <%= content_for?(:content) ? yield(:content) : yield %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
-    <br />
-    <br />
+
     <header>
        <%= render 'layouts/footer'%>
     </header>
    
   </body>
+  
 </html>

@@ -11,7 +11,6 @@ class OrderItemsController < ApplicationController
             @order_item.cart = current_cart
             @order_item.item = selected_item
         end
-
         @order_item.save
         redirect_to cart_path(current_cart)
     end
@@ -22,25 +21,10 @@ class OrderItemsController < ApplicationController
         redirect_to cart_path(current_cart)
     end  
 
-    def add_quantity
-        @order_item = OrderItem.find(params[:id])
-        @order_item.quantity += 1
-        @order_item.save
-        redirect_to cart_path(current_cart)
-      end
-      
-    def reduce_quantity
-        @order_item = OrderItem.find(params[:id])
-        if @order_item.quantity > 1
-          @order_item.quantity -= 1
-        end
-        @order_item.save
-        redirect_to cart_path(current_cart)
-    end
-
     private
+
         def order_item_params
-            params.require(:order_item).permit(:quantity,:item_id, :cart_id)
+            params.require(:order_item).permit(:quantity, :item_id, :cart_id)
         end
 
 end

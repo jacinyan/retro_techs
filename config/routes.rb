@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   # delete 'carts/:id', to: 'carts#destroy'
   delete 'carts/:id', to: 'carts#empty'
 
-  post 'order_items/:id/add', to: 'order_items#add_quantity', as: 'order_item_add'
-  post 'order_items/:id/reduce', to: 'order_items#reduce_quantity', as: 'order_item_reduce'
   post 'order_items', to: 'order_items#create'
   get 'order_items/:id', to: 'order_items#show', as: 'order_item'
   delete 'order_items/:id', to: 'order_items#destroy'
