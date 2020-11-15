@@ -3,12 +3,12 @@ class Cart < ApplicationRecord
     has_many :items, through: :order_items, source: :item
 
     def empty!
-        current_cart.order_items.destroy_all
+        self.order_items.destroy_all
     end
 
     def total
         sum = 0
-        current_cart.order_items.each do |order_item|
+        order_items.each do |order_item|
             if order_item.item.price.present? && order_item.quantity.present?
                 sum += order_item.item.price * order_item.quantity
             end

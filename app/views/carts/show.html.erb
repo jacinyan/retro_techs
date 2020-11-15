@@ -14,7 +14,7 @@
   <% end %>
 </ul>
 
-Sum total: <%= number_to_currency(current_cart.total) %> 
+Sum total: <%= render_cart_total(current_cart) %> 
 
 <%= link_to "Proceed to checkout", new_order_path %><br>
 
