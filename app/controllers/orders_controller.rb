@@ -24,8 +24,9 @@ class OrdersController < ApplicationController
         # @order = Order.create(order_params)
         @order = current_user.orders.build(order_params)
         # @order.user_id = current_user.id
-        current_cart.order_items.each do |order_item|
-          @order.order_items << order_item
+        current_cart.order_items.each do |co_item|
+          @order.order_items << 
+          co_item.cart_id = nil
         end
         @order.save
 
