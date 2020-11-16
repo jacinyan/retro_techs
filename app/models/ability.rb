@@ -19,7 +19,7 @@ class Ability
         can :manage, Cart, user_id: user.id
         can :read, Item
       else 
-        # cannot :view, Order
+        cannot :view, Order
         cannot :view, Cart
       end
 

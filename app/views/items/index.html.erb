@@ -13,7 +13,7 @@
 							<%= image_tag item.picture, class: 'thumbnail' if item.picture.attached? %>
 						</div>
 						<div>
-							<%= link_to "More", item_path(item), class: 'btn' if can? :read, item  %>
+							<%= link_to "See More", item_path(item), class: 'btn' if can? :read, item  %>
 						</div>
 					</div>
 					<%end%> 
