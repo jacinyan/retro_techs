@@ -29,26 +29,25 @@ nav li{
 }
 #welcome .btn{
 	margin-top: 20px;
-	background-color: #0e79a3;
     padding: 7px 28px;
     border-radius: 5px;
-    border: none;
+    border: 2px solid black;
 }
 
 #welcome .btn:hover{
 	opacity:0.9;
-	background-color: #f0a35c!important;
+	background-color: #5ca1f0!important;
 }
 
 #items .btn{
     padding: 7px 28px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 #items .btn:hover{
 	opacity:0.9;
-	background-color:   #f0a35c!important;
+	background-color:   #5ca1f0!important;
 }
 #items{
 	padding: 80px 0px;
@@ -59,10 +58,10 @@ nav li{
 }
 #items img{
 	border-radius: 5%;
-	width: 370px;
-	height: 370px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	width: 400px;
+	height: 400px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 #items h5{
 	margin-top: 22px;

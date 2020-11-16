@@ -59,5 +59,6 @@ gem 'devise'
 
 gem 'cancancan'
 
-
 gem "aws-sdk-s3", "~> 1.84"
+
+gem 'simple_form'

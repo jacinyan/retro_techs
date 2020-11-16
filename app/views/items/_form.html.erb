@@ -1,42 +1,31 @@
-<%= form_with(model: item, local: true) do |form| %>
-  <% if item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<%= simple_form_for @item do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <ul>
-        <% item.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :in_stock %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :price %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :description %>
+  </div>
+  <div class="form-actions">
+    <%= f.input :picture, as: :file %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 
-  <div class="field">
-    <%= form.label :in_stock %>
-    <%= form.text_field :in_stock %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+
+
+
+    
+
+
+
