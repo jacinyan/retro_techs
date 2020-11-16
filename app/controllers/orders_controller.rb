@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
         end
 
         @order.save
+
         respond_to do |format|
           if @order.save
             format.html { redirect_to @order, notice: 'order was successfully created.' }
