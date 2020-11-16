@@ -36,18 +36,19 @@ nav li{
 
 #welcome .btn:hover{
 	opacity:0.9;
-	background-color: #5ca1f0!important;
+	background-color:#007bff!important;
 }
 
 #items .btn{
     padding: 7px 28px;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 #items .btn:hover{
 	opacity:0.9;
-	background-color:   #5ca1f0!important;
+	background-color: #007bff!important;
+	border: 1px solid black;
 }
 #items{
 	padding: 80px 0px;
@@ -79,7 +80,7 @@ p.lead{
 	line-height: 31px;
 }
 
-footer{
+footer-copyright text-center py-3{
 	padding: 80px 0px
 }
 

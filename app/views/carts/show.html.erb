@@ -17,6 +17,6 @@
 
 Sum total: <%= render_cart_total(current_cart) %> 
 
-<%= link_to "Checkout？", new_order_path %><br>
+<%= link_to "Produce Order", new_order_path %><br>
 
 <%= link_to "Empty cart", cart_path(current_cart), method: :delete, data: {confirm: "Are you sure?"} %>

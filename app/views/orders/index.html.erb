@@ -1,6 +1,14 @@
+<h2>Orders</h2>
 <div class="orders index">
-  <h2>Orders</h2>
-
    <% @orders.each do |order| %>
-     <%= link_to("Show", order_path(order), :class => 'action show') %>
+    <p>Name: <%= order.name %></p>
+    <p>Address: <%= order.address %></p>
+    <p>Items:</p>
+      <ul>
+      <% order.order_items.each do |checkout_item| %>
+      <li><%= checkout_item.quantity %> x <%= checkout_item.item.name %></li>
+      <% end %>
+      </ul>
+    <%= link_to("Show", order_path(order), :class => 'action show') %>
     <% end %>
+</div>
