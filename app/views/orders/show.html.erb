@@ -1,5 +1,12 @@
-<p>Checkout</p>
+<p>Order Details</p>
 
-<%=link_to 'Cancel Order', order_path(@order), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" } if can? :destroy, @order %> ||
+<p>Items:</p>
+      <ul>
+      <% @order.order_items.each do |checkout_item| %>
+      <li><%= checkout_item.quantity %> x <%= checkout_item.item.name %><%= " $#{checkout_item.item.price}" %></li>
+      <% end %>
+      </ul>
+
+      Sum total: <%= render_order_total(@order) %> 
 
 <%= link_to 'Back', orders_path %>

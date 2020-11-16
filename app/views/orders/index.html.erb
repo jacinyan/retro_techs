@@ -2,13 +2,7 @@
 <div class="orders index">
    <% @orders.each do |order| %>
     <p>Name: <%= order.name %></p>
-    <p>Address: <%= order.address %></p>
-    <p>Items:</p>
-      <ul>
-      <% order.order_items.each do |checkout_item| %>
-      <li><%= checkout_item.quantity %> x <%= checkout_item.item.name %></li>
-      <% end %>
-      </ul>
+    <p>Address: <%= order.address %></p>   
     <%= link_to("Show", order_path(order), :class => 'action show') %>
     <% end %>
 </div>
