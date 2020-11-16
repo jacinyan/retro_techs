@@ -2,20 +2,18 @@
 <% end %>
 
 
-<section id="second">
+<section id="items">
 	<div class="container">
 		<div class='row'>
 			<div class='col-md-12 text-center'>
 				<div class='row'>
 					<% @items.each do |item| %>
 					<div class='col-md-4 text-center'>
-						<div class='outer'>
-							<div class='upper'>
-								<%= image_tag item.picture, class: 'upper' if item.picture.attached? %>
-							</div>
-							<div>
-								<%= link_to "View Item", item_path(item), class: 'center' if can? :read, item  %>
-							</div>
+						<div>
+							<%= image_tag item.picture, class: 'thumbnail' if item.picture.attached? %>
+						</div>
+						<div>
+							<%= link_to "More", item_path(item), class: 'btn' if can? :read, item  %>
 						</div>
 					</div>
 					<%end%> 
@@ -24,9 +22,5 @@
 		<div>
 	</div>
 </div>
-
-<% if can? :create, Item %>
-	<%= link_to("Add New Item", new_item_path, :class => 'action new') %>
-<% end %>
 
             

@@ -25,7 +25,6 @@ class OrdersController < ApplicationController
         @order = current_user.orders.build(order_params)
         # @order.user_id = current_user.id
         current_cart.order_items.each do |checkout_item|
-          checkout_item.order_id = @order.id
           @order.order_items << checkout_item
           checkout_item.cart_id = nil
         end

@@ -1,6 +1,5 @@
 @import "bootstrap/scss/bootstrap";
 
-
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Noto Sans TC', sans-serif;
 }
@@ -14,7 +13,7 @@ nav li{
 	    margin: 0 13px;
 }
 
-#intro .jumbotron{
+#welcome .jumbotron{
 	background: asset-url('hero.jpeg');
 	background-size: cover;
     background-repeat: no-repeat;
@@ -23,36 +22,49 @@ nav li{
 	margin-bottom: 0px;
 }
 
-#intro .jumbotron .container{
+#welcome .jumbotron .container{
 	position:relative;
     top: 50%;
     transform: translate(0, -50%);
 }
-#intro .btn{
+#welcome .btn{
 	margin-top: 20px;
-}
-.btn{
-    background-color: #775cf0;
+	background-color: #0e79a3;
     padding: 7px 28px;
     border-radius: 5px;
     border: none;
 }
-.btn:hover{
-	opacity:0.5;
-	background-color: #775cf0!important;
+
+#welcome .btn:hover{
+	opacity:0.9;
+	background-color: #f0a35c!important;
 }
-#second{
+
+#items .btn{
+    padding: 7px 28px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#items .btn:hover{
+	opacity:0.9;
+	background-color:   #f0a35c!important;
+}
+#items{
 	padding: 80px 0px;
 }
-#second h3, #latest h3{
+#items h3, #latest h3{
 	margin-bottom: 70px;
 	font-size: 32px;
 }
-#second img{
-	border-radius: 10%;
-    width: 108px;
+#items img{
+	border-radius: 5%;
+	width: 370px;
+	height: 370px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
-#second h5{
+#items h5{
 	margin-top: 22px;
     font-size: 16px;
 }
@@ -67,123 +79,8 @@ p.lead{
 	color: black;
 	line-height: 31px;
 }
-#latest {
-	background: rgb(248, 248, 248);
-	padding: 80px 0px;
-}
-#latest .upper{
-	position:relative;
-}
-#latest .innertext{
-	// position:absolute;
-	// bottom:20px;
-	// left:30px;
-}
-#latest .innertext span{
-	background: rgba(255,255,255,0.3);
-    padding: 5px 16px;
-    border-radius: 30px;
-}
-#latest h4{
-	font-size: 19px;
-    margin-top: 18px;
-}
-#latest .lower{
-	    padding: 22px;
-
-}
-#latest .col-md-4 .outer{
-	box-shadow: 0 0 8px 0 rgba(0,0,0,0.08);
-	padding: 0px;
-	margin: 0 5px;
-}
-#latest .lower h3{
-	font-size: 21px;
-	margin-bottom: 20px;
-}
-#latest a{
-	color:black;
-}
-#latest a{
-	color:black;
-	text-decoration: none;
-}
-#latest i{
-	margin-right:5px;
-}
 
 footer{
 	padding: 80px 0px
-}
-
-#latest .thehead h3{
-    margin-bottom: 7px;
-    font-size: 32px;
-
-}
-#latest .thehead p{
-    margin-bottom: 80px;
-
-}
-#latest .thehead .col-md-4 p{
-	margin-bottom: 0px;
-    margin-top: 25px;
-}
-#latest .thehead h3.notag{
-	margin-bottom: 88px;
-}
-.card-header .btn,.card-header .btn:hover{
-	background:none!important;
-	color:black;
-}
-#intro .jumbotron.jumbotron2{
-	height: 400px;
-}
-#singlecontent{
-	padding: 80 0px;
-}
-.thetag{
-	color: #f05f5c;
-    font-size: 16px;
-    border: 1px solid #f05f5c;
-    padding: 10px 18px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-left: 7px;
-}
-#singlecontent h4{
-	margin-top:50px;
-}
-.apply{
-	background-color: #f9f9f9;
-	padding: 44px;
-}
-.apply .btn{
-	font-size: 16px;
-    margin-top: 31px;
-    width: 100%;
-}
-.applybelow{
-	margin-top:80px;
-	text-align: center;
-}
-.btn2{
-    color: #707070;
-    border: 1px solid #707070;
-    padding: 10px 24px;
-    border-radius: 20px;
-    margin-top: 3px;
-    display: inline-block;
-}
-.btn2:hover{
-	text-decoration: none;
-	opacity: 0.8;
-	color: #707070;
-}
-
-.cinner{
-	position:relative;
-    top: 50%;
-    transform: translate(0, -50%);
 }
 
