@@ -10,7 +10,9 @@
 
 For the past 40 years, the landscape of technologies have changed massively. Specifically, the evolution of electronic gadgets has grown much faster than people can ever imagine. In this day and age, we are definitely enjoying the benefits and convenience that the devices bring with them.
 
-Perhaps it is worth looking at the problems found from another perspective. Reminiscence is something human beings share with each other, and in light of this it is believed a fair few number of antique collectors are keen to own pieces of equipment from back in the day. Nevertheless, items as such are very rarely seen in common marketplaces
+Perhaps it is worth looking at the problems found from another perspective. Reminiscence is something human beings share with each other, and it is a symbol of collective memories and emotions. Given such intensive technological developments, it is believed a large number of consumers are keen to own at at least a piece or two of retro electronic devices,even just from, for example, 5 years ago. 
+
+Nevertheless, such items are very rarely seen in common marketplaces, and in light of this there is a potential niche market for retro technologies. 
 
 怀旧是寻找一种安慰，尤其是在危机之下或社会动荡的时代，怀旧能给人以舒适、亲切等情感，成为人们内心的庇护所。怀旧的消费者群体是一种拥有共同的情感记忆和记忆符号，而且会通过怀旧唤起共同兴趣社团成员间的亲密感并获得群体性认同的集合。在这种群体的集合中，共同的记忆可以带来大量的认同，从而形成集体回忆。集体回忆是在一个群体中，大家对曾经一起共享、构建以及传承的事物的共同回忆。在经历了一段时间后，在特定环境与行为的指引下，这段记忆被唤醒，当事人则会产生强烈的共鸣、认同与超乎想象的热情。
 
