@@ -1,22 +1,39 @@
-<h2>Cart show</h2>
+<h2>Items in the cart</h2>
 
-<ul>
-  <% current_cart.order_items.each do |order_item| %>
-    <li>Item: <%= order_item.item.name %></li>
-    <li>Price: <%= number_to_currency(order_item.item.price) %></li>
-    <li>Quantity: <%= order_item.quantity %></li>
+<table class="table table-sm table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Item name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </thead>
 
-    <ul>
-      <li>
-        <%= link_to "Remove item", order_item_path(order_item), method: :delete %>
-      </li>
-    </ul>
-  
-  <% end %>
-</ul>
+    <tbody>
+            <% current_cart.order_items.each do |order_item| %>
+              <tr>
+                <td>
+                  <%= order_item.item.name %>
+                </td>
+                <td>
+                  <%= number_to_currency(order_item.item.price) %>
+                </td>
+                <td>
+                  <%= order_item.quantity %>
+                </td>
+                <td>
+                  <%= link_to "Remove item", order_item_path(order_item), method: :delete %>
+                </td>
+              </tr>
+            <% end %>
+    </tbody>
 
-Sum total: <%= render_cart_total(current_cart) %> 
-
-<%= link_to "Produce Order", new_order_path %><br>
-
-<%= link_to "Empty cart", cart_path(current_cart), method: :delete, data: {confirm: "Are you sure?"} %>
+</table>
+<div class='btn-primary'>
+Sum total: <%= render_cart_total(current_cart) %>
+</div> 
+<br>
+<%= link_to "Produce Order", new_order_path, class:'btn-secondary' %>
+<br>
+<%= link_to "Empty cart", cart_path(current_cart), method: :delete, class: 'btn-warning', data: {confirm: "Are you sure?"} %>
