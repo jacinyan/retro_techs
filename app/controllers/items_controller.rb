@@ -6,6 +6,12 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     # @items = Item.all
+
+    if params[:search_by_name] && params[:search_by_name] != ""
+      @items = @items.where("name like ?", 
+      "%#{params[:search_by_name]}%")
+    end
+ 
   end
 
   # GET /items/1
