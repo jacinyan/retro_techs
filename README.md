@@ -2,9 +2,13 @@
 
 ## A link (URL) to your published App
 
+https://quiet-hamlet-64153.herokuapp.com/
+
 ## A link to your GitHub repository
 
-# Problems Discovered, Target audience and Application Purpose
+https://github.com/jacinyan/retro_techs
+
+# Problems discovered, target audience and application Purpose
 
 Over the past 40 years, the landscape of technologies have changed massively. Specifically, the evolution of electronic gadgets has grown much faster than people can ever imagine. In this day and age, we are definitely enjoying the benefits and convenience that the devices bring with them.
 
@@ -25,11 +29,11 @@ Specific:
     As a seller, I can sell my items in the item index page.
     As a seller, I can manage my items, such as adjusting the price of my items and modifying the description.
     As a seller, I can communicate with the buyer as soon as an order is produced.
-
+    
     As a buyer, I can see the listing of items in the item index page.
     As a buyer, I can see the details of the listed items show page
     As a buyer, I can communicate with the seller as soon as an order is produced.
-
+    
     As an admin, I can manage all the actions performed on the platform/application.
 
 # High-level components
@@ -41,10 +45,26 @@ With regards to authorisatoin, there is an assignment of roles to three types of
 In relation to real-time purchase, a search bar is set up to filter item information (item name for example). For item management, even though there is not a tree-structure category type of system, customers can still easily check out the imagery. As soon as a customer detects an ideal item, he/she is able to find out more details the item by clicking on the button, and then will be directed to a detail page to learn more about the name, status, price and description.
 
 In addition, if a buyer finds an ideal they can temporarily put it in the shopping cart, and continue with other purchases. Before they decide to make an order, they are able review the items in the shopping cart. Whenever they feel ready, they can proceed to the order page where then can make further payment. Order management records the name and shipping address of a USER, yet they are not able to manage this kind of information which is accessed only by the admin.
- 
+
 # Screenshots
 
+![Alt text here](app/assets/docs/welcome.png)
+
+![Alt text here](app/assets/docs/shop.png)
+
+![Alt text here](app/assets/docs/search.png)
+
+![Alt text here](app/assets/docs/show.png)![Alt text here](app/assets/docs/cart.png)
+
+![Alt text here](app/assets/docs/make order.png)
+
+![Alt text here](app/assets/docs/orders.png)
+
+![Alt text here](app/assets/docs/order details.png)
+
 # Sitemap
+
+![Alt text here](app/assets/docs/sitemap.png)
 
 # Tech Stack
 
@@ -65,9 +85,7 @@ SimpleForm is applied for a better user information submission experience.
 
 # Wireframes
 
-
-
-
+![Alt text here](app/assets/docs/wireframe.svg)
 
 # Third Party Services
 
@@ -98,11 +116,16 @@ Orders: There is user information on it, from which a user_id as foreign key alo
 
 Items: This is essentially the item supplies table that tells whether or not a certain item exist. The item attributes are name, in-stock status, unit price and item description.
 
-Carts: It can be seen as an entity in which a selected item (a potential order-item) is temporarily 'stored'. These selected items are subject to being destroyed.
+Order-Items：The only independent attribute on the table is the selected item quantity. The rest are item_id, cart_id, and order_id foreign keys. In this case, however, order_id's not null constraint is removed to facilitate interim data storage and transfer.
 
-Order-Items：The only independent attribute on the table is the selected item quantity. The rest are item_id, cart_id, and order_id foreign keys. In this case, order_id's not null constraint is removed to facilitate interim data transfer.
+Carts: It can be seen as an entity in which a selected item (a potential order-item) is temporarily 'stored'. These selected items are subject to being destroyed. Cart_id's not null constraint is also removed to destroy the relations between order-items and carts by the end of a purchase.
 
-Particularly, there is a role column for authorisation with Cancancan via Rails console. Correspondingly, there is a user_id column in items table for authorisation implementation.
+Entity Relations Diagram:
+
+![Alt text here](app/assets/docs/erd.png)
+
+
+Particularly, in the actual schema there is a role column for authorisation with Cancancan via Rails console. Correspondingly, there is a user_id column in items table for authorisation implementation.
 
 # Description of ActiveRecord Associations
 
@@ -111,7 +134,7 @@ The most distinct association is the one between User and Order. It is a one-to-
     class User < ApplicationRecord
         has_many :orders, dependent: :destroy
     end
-
+    
     class Order < ApplicationRecord
         belongs_to :user
     end
@@ -123,19 +146,19 @@ Firstly, a cart instance acts as a 'mailman' to collect prospective order-item i
     class Cart < ApplicationRecord
         has_many :order_items, dependent: :destroy
     end
-
+    
     class OrderItem < ApplicationRecord
         belongs_to :cart
     end
-
+    
     class OrderItem < ApplicationRecord
         belongs_to :item
     end
-
+    
     class Item < ApplicationRecord
         has_many :order_items, dependent: :destroy
     end
- 
+
 As previously mentioned, a field named 'order' in order-items table from the schema is pre-defined for further actions, yet an order-item instance cannot be created by default. Therefore,
 
     class OrderItem < ApplicationRecord
@@ -147,7 +170,7 @@ Finally, the 'mailman' successfully delivers order_item instances through this
     class OrderItem < ApplicationRecord
         belongs_to :order
     end
-
+    
     class Order < ApplicationRecord
         has_many :order_items
     end
@@ -165,4 +188,6 @@ As can be seen, @instance#order_items has a transformation from cart instance to
 The details can be viewed through this link: https://trello.com/b/PmpicYIB/two-sided-marketplace
 
 
-![Alt text here](docs/ip.png)
+![Alt text here](app/assets/docs/trello.png)
+
+![Alt text here](app/assets/docs/trello2.png)
