@@ -56,11 +56,11 @@ In addition, if a buyer finds an ideal they can temporarily put it in the shoppi
 
 ![Alt text here](app/assets/docs/show.png)![Alt text here](app/assets/docs/cart.png)
 
-![Alt text here](app/assets/docs/make order.png)
+![Alt text here](app/assets/docs/makeorder.png)
 
 ![Alt text here](app/assets/docs/orders.png)
 
-![Alt text here](app/assets/docs/order details.png)
+![Alt text here](app/assets/docs/orderdetails.png)
 
 # Sitemap
 
