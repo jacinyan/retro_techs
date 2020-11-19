@@ -2,7 +2,7 @@
 
 ## A link (URL) to your published App
 
-https://quiet-hamlet-64153.herokuapp.com/
+https://retro-techs.herokuapp.com/
 
 ## A link to your GitHub repository
 
@@ -85,7 +85,7 @@ SimpleForm is applied for a better user information submission experience.
 
 # Wireframes
 
-![Alt text here](app/assets/docs/wireframe.svg)
+![Alt text here](app/assets/docs/Wireframe.svg)
 
 # Third Party Services
 
@@ -122,7 +122,7 @@ Carts: It can be seen as an entity in which a selected item (a potential order-i
 
 Entity Relations Diagram:
 
-![Alt text here](app/assets/docs/erd.png)
+![Alt text here](app/assets/docs/ERD.png)
 
 
 Particularly, in the actual schema there is a role column for authorisation with Cancancan via Rails console. Correspondingly, there is a user_id column in items table for authorisation implementation.
