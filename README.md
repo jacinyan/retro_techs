@@ -102,6 +102,8 @@ Carts: It can be seen as an entity in which a selected item (a potential order-i
 
 Order-Items：The only independent attribute on the table is the selected item quantity. The rest are item_id, cart_id, and order_id foreign keys. In this case, order_id's not null constraint is removed to facilitate interim data transfer.
 
+Particularly, there is a role column for authorisation with Cancancan via Rails console. Correspondingly, there is a user_id column in items table for authorisation implementation.
+
 # Description of ActiveRecord Associations
 
 The most distinct association is the one between User and Order. It is a one-to-many association where a user may or may not have an order, yet an order exists on the condition a user exists. 
@@ -158,6 +160,9 @@ In addition, under certain circumstances order-item instances can exist with eve
 
 As can be seen, @instance#order_items has a transformation from cart instance to order instance, but data can be delivered basically without errors because of the associations predefined.
 
+# Task Flow
+
+The details can be viewed through this link: https://trello.com/b/PmpicYIB/two-sided-marketplace
 
 
-
+![Alt text here](docs/ip.png)
