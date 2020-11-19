@@ -6,6 +6,7 @@ class Cart < ApplicationRecord
         self.order_items.destroy_all
     end
 
+    #defined in helper module
     def total
         sum = 0
         order_items.each do |order_item|

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
     before_action :authenticate_user!, except: [:index, :show]
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    # available in all of the view templates
     helper_method :current_cart
 
     def current_cart

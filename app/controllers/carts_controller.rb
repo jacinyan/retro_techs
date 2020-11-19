@@ -5,6 +5,7 @@ class CartsController < ApplicationController
 
     def empty
         current_cart
+        # calling method defined in model
         current_cart.empty!
         flash[:warning] = "Emptied"
         redirect_to items_path
