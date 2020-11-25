@@ -1,42 +1,45 @@
 <% content_for :title do %>Order Items<% end %>
-<h2>Items in the cart</h2>
 
-<table class="table table-sm table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th>Item name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Action</th>
-      </tr>
-    </thead>
+<div class="container">
+  <table class="table table-sm table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Item name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
 
-    <tbody>
-            <% current_cart.order_items.each do |order_item| %>
-              <tr>
-                <td>
-                  <%= order_item.item.name %>
-                </td>
-                <td>
-                  <%= number_to_currency(order_item.item.price) %>
-                </td>
-                <td>
-                  <%= order_item.quantity %>
-                </td>
-                <td>
-                  <%= link_to "Remove item", order_item_path(order_item), method: :delete %>
-                </td>
-              </tr>
-            <% end %>
-    </tbody>
+      <tbody>
+              <% current_cart.order_items.each do |order_item| %>
+                <tr>
+                  <td>
+                    <%= order_item.item.name %>
+                  </td>
+                  <td>
+                    <%= number_to_currency(order_item.item.price) %>
+                  </td>
+                  <td>
+                    <%= order_item.quantity %>
+                  </td>
+                  <td>
+                    <%= link_to "Remove item", order_item_path(order_item), method: :delete %>
+                  </td>
+                </tr>
+              <% end %>
+      </tbody>
+  </table>
+</div>
 
-</table>
-<div class='btn-primary'>
-Sum total: <%= render_cart_total(current_cart) %>
+<div class='sum'>
+  Sum total: <%= render_cart_total(current_cart) %>
 </div> 
-<br>
-<%= link_to "Place an Order", new_order_path, class:'btn-secondary' %>
-<br>
-<%= link_to "Empty cart", cart_path(current_cart), method: :delete, class: 'btn-warning', data: {confirm: "Are you sure?"} %>
+  <br>
+  <%= link_to "Place an Order", new_order_path, class:'btn' %>
+  <br>
+  <%= link_to "Empty cart", cart_path(current_cart), method: :delete, class: 'btn-warning', data: {confirm: "Are you sure?"} %>
 
-<%= link_to 'Back', items_path %>
+<div class='back'>
+  <%= link_to 'Back', items_path, class: 'btn' %>
+</div>

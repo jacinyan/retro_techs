@@ -1,6 +1,11 @@
 <% content_for :title do %>Sell Items<% end %>
-<h1>Sell an Item</h1>
 
-<%= render 'form', item: @item %>
+<h4>Sell</h4>
 
-<%= link_to 'Back', items_path %>
+<div class="render">
+    <%= render 'form', item: @item %>
+</div>
+
+<div class="back">
+    <%= link_to 'Back', items_path, class:'btn' %>
+</div>
