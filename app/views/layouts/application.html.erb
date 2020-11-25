@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Retro Techs" %></title>
-     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Retro Techs" %>">
+    <title>Retro Techs<%= ' - ' + yield(:title) if content_for?(:title)  %></title>
+     <meta name="description" content="Retro Techs<%= ' - ' + yield(:description) if content_for?(:description) %>">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
