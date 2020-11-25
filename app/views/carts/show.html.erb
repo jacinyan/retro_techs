@@ -1,10 +1,11 @@
 <% content_for :title do %>Order Items<% end %>
 
 <div class="container">
+  <h4>Selected Items</h4>
   <table class="table table-sm table-hover">
       <thead class="thead-dark">
         <tr>
-          <th>Item name</th>
+          <th>Name</th>
           <th>Price</th>
           <th>Quantity</th>
           <th>Action</th>
@@ -30,16 +31,18 @@
               <% end %>
       </tbody>
   </table>
-</div>
 
-<div class='sum'>
-  Sum total: <%= render_cart_total(current_cart) %>
-</div> 
-  <br>
-  <%= link_to "Place an Order", new_order_path, class:'btn' %>
-  <br>
-  <%= link_to "Empty cart", cart_path(current_cart), method: :delete, class: 'btn-warning', data: {confirm: "Are you sure?"} %>
 
-<div class='back'>
-  <%= link_to 'Back', items_path, class: 'btn' %>
+  <div class='sum'>
+    Sum total: <%= render_cart_total(current_cart) %>
+  </div> 
+    <br>
+    <%= link_to "Place an Order", new_order_path, class:'btn' %>
+    <br>
+    <%= link_to "Empty cart", cart_path(current_cart), method: :delete, class: 'btn-warning', data: {confirm: "Are you sure?"} %>
+
+  <div class='back'>
+    <%= link_to 'Back', items_path, class: 'btn' %>
+  </div>
+
 </div>

@@ -1,11 +1,13 @@
 <% content_for :title do %>Edit Items<% end %>
 
-<h4>Edit</h4>
+<div class="container">
+    <h4>Edit</h4>
 
-<div class="render">
-    <%= render 'form', item: @item %>
-</div>
+    <div class="render">
+        <%= render 'form', item: @item %>
+    </div>
 
-<div class="back">
-    <%= link_to 'Back', items_path, class: 'btn' %>
+    <div class="back">
+        <%= link_to 'Back', items_path, class: 'btn' %>
+    </div>
 </div>
