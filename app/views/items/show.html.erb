@@ -1,7 +1,7 @@
 <% content_for :title do %>Item Details<% end %>
 
 <div class="container">
-  <div class="card" style="width: 50rem;">
+  <div class="card" style="width: 30rem;">
     <%= image_tag @item.picture, class: 'card-img-top' if @item.picture.attached? %>
     <div class="card-body">
       <h5 class="card-title"><%= @item.name %></h5>
@@ -19,7 +19,7 @@
   </div>
 
   <div class="back">
-    <%= link_to 'Back', items_path, class:'btn' %>
+    <%= link_to 'Back', items_path, class:'btn btn-secondary' %>
   </div>
 
 </div>

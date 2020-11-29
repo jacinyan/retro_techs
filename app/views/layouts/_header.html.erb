@@ -9,8 +9,6 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item"><%= link_to "Shop", items_path, class: 'nav-link' %></li>
-					<li class="nav-item"><%= link_to "Cart", cart_path(current_cart), class: 'nav-link' if can? :view, Order %></li>
-					<li class="nav-item">
 					<% if can? :create, Item %>
 						<%= link_to("Sell❓", new_item_path, class: 'nav-link') %>
 					<% end %>			
@@ -24,7 +22,8 @@
 				</ul>
 				<ul class="navbar-nav">
 					<% if user_signed_in? %>
-
+					<li class="nav-item"><%= link_to "Cart🛒", cart_path(current_cart), class: 'nav-link' if can? :view, Order %></li>
+					<li class="nav-item">
 					<li class="nav-item dropdown">
 						<%= link_to '#', class: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' do %><%= "G'day, #{current_user.username}❗️" %><% end %>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -32,7 +31,6 @@
 							<%= link_to "Orders", orders_path, class: 'dropdown-item' if can? :view, Order %>
 						</div>
 					</li>
-					
 					<li><%= link_to "Sign out❓", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
 					<% else %>
 					<li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: 'nav-link'  %></li>
