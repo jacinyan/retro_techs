@@ -1,26 +1,35 @@
 <% content_for :title do %>Item Details<% end %>
 
 <div class="container">
-  <div class="card" style="width: 30rem;">
-    <%= image_tag @item.picture, class: 'card-img-top' if @item.picture.attached? %>
-    <div class="card-body">
-      <h5 class="card-title"><%= @item.name %></h5>
-      <p class="card-text"><%= @item.description %></p>
+  <div class="row">
+    <div class="col-md-9 col-md-offset-3" id='itemDetails'>
+      <div class="card" style="width: 35rem;">
+        <%= image_tag @item.picture, class: 'card-img-top' if @item.picture.attached? %>
+        <div class="card-body">
+          <h5 class="card-title"><%= @item.name %></h5>
+          <p class="card-text"><%= @item.description %></p>
+        </div>
+        <div class="card-body">
+          <%=link_to 'Edit', edit_item_path(@item), class: "card-link" if can? :update, @item%>
+          <%=link_to 'Delete', item_path(@item), class: "card-link", method: "delete", data: { confirm: "Are you sure?" } if can? :destroy, @item %>
+          
+        </div>
+      </div>
+    </div> 
+
+    <div class="col-md-3" id="priceTag">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">$<%= @item.price %></h5>
+          <p class="card-text">In stock: <%= @item.in_stock %></p>
+          <%= button_to "Add to cart", order_items_path(item_id: @item.id), method: :post, class: "btn btn-warning" if can? :manage, Order %> 
+        </div>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Price: <%= @item.price %></li>
-      <li class="list-group-item">In stock: <%= @item.in_stock %></li>
-    </ul>
-    <div class="card-body">
-      <%=link_to 'Edit', edit_item_path(@item), class: "card-link" if can? :update, @item%>
-      <%=link_to 'Delete', item_path(@item), class: "card-link", method: "delete", data: { confirm: "Are you sure?" } if can? :destroy, @item %>
-      <%= button_to "Add to cart", order_items_path(item_id: @item.id), method: :post, class: "card-link" if can? :manage, Order %> 
-    </div>
+
+
   </div>
 
-  <div class="back">
-    <%= link_to 'Back', items_path, class:'btn btn-secondary' %>
-  </div>
 
 </div>
 
