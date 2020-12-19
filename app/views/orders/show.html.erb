@@ -19,10 +19,10 @@
   </table>
 
   <div class='sum'>
-  Sum total: <%= render_order_total(@order) %>
+  Sum total: $<%= render_order_total(@order) %>
   </div> 
 
-<div class='back'>
-  <%= link_to 'Back', orders_path, class:'btn' %>
-</div>
+<div>
+  <%= link_to 'Back', :back %>
+</div> 
 </div>
