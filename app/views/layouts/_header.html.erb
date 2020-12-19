@@ -14,7 +14,6 @@
 						<%= link_to "Sell❓", new_item_path, class: 'nav-link'%>
 					<% end %>	
 					</li>		
-					</li>
 					<li class="nav-item">
 					<%= form_tag "/items", :method => "get" do %>
 						<%= text_field_tag :search_by_name, params[:search_by_name] %>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'order_items/:id', to: 'order_items#show', as: 'order_item'
   delete 'order_items/:id', to: 'order_items#destroy'
 
+
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
