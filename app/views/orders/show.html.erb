@@ -1,28 +1,25 @@
 <% content_for :title do %>Order Details<% end %>
 <div class="container">
   <table class="table table-sm table-hover">
-      <thead class="thead-dark">
+    <thead class="thead-dark">
+      <tr>
+        <th>Order Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.order_items.each do |checkout_item| %>
         <tr>
-          <th>Order Details</th>
+          <td>
+            <%= checkout_item.quantity %> x <%= checkout_item.item.name %><%= " $#{checkout_item.item.price}" %>
+          </td>
         </tr>
-      </thead>
-
-      <tbody>
-          <% @order.order_items.each do |checkout_item| %>
-          <tr>
-              <td>
-                  <%= checkout_item.quantity %> x <%= checkout_item.item.name %><%= " $#{checkout_item.item.price}" %>
-              </td>
-          </tr>
-          <% end %>
-      </tbody>
+      <% end %>
+    </tbody>
   </table>
-
   <div class='sum'>
-  Sum total: $<%= render_order_total(@order) %>
-  </div> 
-
-<div>
-  <%= link_to 'Back', :back %>
-</div> 
+    Sum total: $<%= render_order_total(@order) %>
+  </div>
+  <div>
+    <%= link_to 'Back', :back %>
+  </div>
 </div>

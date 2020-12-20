@@ -1,35 +1,32 @@
 <% content_for :title do %>Orders<% end %>
-
 <div class="container">
   <h4>List of Orders</h4>
   <table class="table table-sm table-hover">
-      <thead class="thead-dark">
+    <thead class="thead-dark">
+      <tr>
+        <th>Recipient</th>
+        <th>Address</th>
+        <th>Time</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
         <tr>
-          <th>Recipient</th>
-          <th>Address</th>
-          <th>Time</th>
-          <th>View</th>
+          <td>
+            <%= order.name %>
+          </td>
+          <td>
+            <%= order.address %>
+          </td>
+          <td>
+            <%= order.created_at%>
+          </td>
+          <td>
+            <%= link_to("Show", order_path(order), class: 'btn btn-secondary') %>
+          </td>
         </tr>
-      </thead>
-
-      <tbody>
-              <% @orders.each do |order| %>
-                <tr>
-                  <td>
-                    <%= order.name %>
-                  </td>
-                  <td>
-                    <%= order.address %>
-                  </td>
-                  <td>
-                    <%= order.created_at%>
-                  </td>
-                  <td>
-                    <%= link_to("Show", order_path(order), class: 'btn btn-secondary') %>
-                  </td>
-                </tr>
-              <% end %>
-      </tbody>
-
+      <% end %>
+    </tbody>
   </table>
 </div>
