@@ -1,9 +1,11 @@
 <% content_for :title do %>Sell Items<% end %>
 <div class="container">
-  <h4>Sell Items</h4>
-  <%= render 'form', item: @item %>
-  <br />
-  <div class="back">
-    <%= link_to 'Back', :back %>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h4>Sell Items</h4>
+      <%= render 'form', item: @item %>
+      <br>
+      <%= link_to 'Back', :back %>
+    </div>
   </div>
 </div>
