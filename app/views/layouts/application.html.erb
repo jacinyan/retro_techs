@@ -14,18 +14,26 @@
       <%= render 'layouts/header'%>
     </header>
     <main role="main">
+      <% if flash[:notice] %>
+        <div class='alert alert-success alert-dismissible fade show'>
+          <button type='button' class='close' data-dismiss='alert'>&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:error] %>
+        <div class='alert alert-danger alert-dismissible fade show'>
+          <button type='button' class='close' data-dismiss='alert'>&times;</button>
+          <%= flash[:error] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class='alert alert-warning alert-dismissible fade show'>
+          <button type='button' class='close' data-dismiss='alert'>&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
     <footer>
       <%= render 'layouts/footer'%>
     </footer>
   </body>
-  <% unless flash.empty? %>
-    <script type="text/javascript">
-      <% flash.each do |f| %>
-          <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-         	 toastr['<%= type %>']('<%= f[1] %>');
-         <% end %>
-    </script>
-  <% end %>
 </html>
