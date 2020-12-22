@@ -8,8 +8,7 @@ class ItemsController < ApplicationController
     # @items = Item.all
 
     if params[:search_by_name] && params[:search_by_name] != ""
-      @items = @items.where("name like ?", 
-      "%#{params[:search_by_name]}%")
+      @items = @items.where("name ILIKE ?", "%#{params[:search_by_name]}%")
     end
  
   end
