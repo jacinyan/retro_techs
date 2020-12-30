@@ -32,8 +32,10 @@
   <div class='sum'>
     Sum total: $<%= render_cart_total(current_cart) %>
   </div>
-  <%= link_to "Place an Order", new_order_path, class:'btn btn-secondary' %>
-  <%= link_to "Empty cart", cart_path(current_cart), method: :delete, class: 'btn btn-warning', data: {confirm: "Are you sure?"} %>
+  <% if cart_length(current_cart) > 0 %>
+    <%= link_to "Place an Order", new_order_path, class:'btn btn-secondary'%>
+    <%= link_to "Empty cart", cart_path(current_cart), method: :delete, class: 'btn btn-warning', data: {confirm: "Are you sure?"} %>
+  <% end %>
   <br>
   <br>
   <div class='back'>
