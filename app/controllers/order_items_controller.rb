@@ -12,7 +12,8 @@ class OrderItemsController < ApplicationController
             @order_item.item = selected_item
         end
         @order_item.save
-        redirect_to cart_path(current_cart)
+        flash[:notice] = 'Item was succefully added to cart.'
+        redirect_to items_url
     end
 
     def destroy

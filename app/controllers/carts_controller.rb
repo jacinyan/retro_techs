@@ -7,8 +7,13 @@ class CartsController < ApplicationController
         current_cart
         # calling method defined in model
         current_cart.empty!
-        flash[:warning] = "Emptied"
-        redirect_to items_path
+        respond_to do |format|
+            format.html { redirect_to cart_url, notice: 'Cart was successfully emptied.' }
+            format.json { head :no_content }
+          end
     end
 
 end
+
+
+   
